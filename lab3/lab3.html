@@ -21,8 +21,10 @@
 			camera.position.z = 5;
 			THREE.Cache.enabled = true;
 			var count = 0;
+			var counter =0;
 			var loader = new THREE.FileLoader();
-			var fshader, vshader;
+			var loader2 = new THREE.FileLoader();
+			var fshader, vshader, fshader2, vshader2;
 			loader.load('shaders/vertexShader.vert',
 			// onLoad callback
 				function (data) {
@@ -54,6 +56,36 @@
 			// onError callback
 				function (err) {console.error('An error happened');});
 
+			loader2.load('shaders/vertexShader2.vert',
+			// onLoad callback
+				function (data) {
+						console.log(data); // output the text to the console
+						vshader2 = data;
+						counter += 1;
+						addCoolCube2(); // we will write this method
+					},
+			// onProgress callback
+				function (xhr) {
+					console.log((xhr.loaded/xhr.total * 100)+ '% loaded');
+				},
+			// onError callback
+				function (err) {console.error('An error happened');});
+			//load fshader
+			loader2.load('shaders/fragmentShader2.frag',
+			// onLoad callback
+				function (data) {
+						console.log(data); // output the text to the console
+						fshader2 = data;
+						counter += 1;
+						addCoolCube2(); // we will write this method
+					},
+			// onProgress callback
+				function (xhr) {
+					console.log((xhr.loaded/xhr.total * 100)+ '% loaded');
+				},
+			// onError callback
+				function (err) {console.error('An error happened');});
+
 			// setup the cube
 			var geometry = new THREE.BoxGeometry();
 			var material = new THREE.MeshPhongMaterial( { color: 0xdddddd, specular: 0x00ff00, shininess: 30 });
@@ -65,7 +97,7 @@
 			scene.add(cube2);
 			geometry2.translate(-2, -2, 0);
 			var geometry1, material1, mesh;
-			var geometry3, material3;
+			var geometry3, material3, mesh2;
 
 			//function to add cool cube
 			function addCoolCube() {
@@ -79,11 +111,20 @@
 				mesh = new THREE.Mesh(geometry1, material1);
 				mesh.position.x = 2;
 				scene.add(mesh);
+
+				}	
+			}
+			
+			function addCoolCube2(){
+				if(counter == 2) {
+					let uniforms2 = {
+						"time": { value: 1.0 }
+						};
 				geometry3 = new THREE.BoxGeometry(1, 1, 1);
-				material3 =  new THREE.ShaderMaterial({uniforms: uniforms, fragmentShader: "uniform float time;uniform vec2 resolution;void main()	{float x = mod(time + gl_FragCoord.x, 20.) < 10. ? 1. : 0.;float y = mod(time + gl_FragCoord.y, 20.) < 10. ? 1. : 0.; gl_FragColor = vec4(vec3(min(x, y)), 1.);}",vertexShader: vshader,precision: "mediump"});
-				mesh = new THREE.Mesh(geometry3, material3);
-				mesh.position.x = 5;
-				scene.add(mesh);
+				material3 =  new THREE.ShaderMaterial({uniforms: uniforms2, fragmentShader: fshader2 ,vertexShader: vshader2,precision: "mediump"});
+				mesh2 = new THREE.Mesh(geometry3, material3);
+				mesh2.position.x = 5;
+				scene.add(mesh2);
 				}	
 			}
 
