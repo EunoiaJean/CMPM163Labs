@@ -12,12 +12,12 @@
 		<script src="../three.js-master/build/three.js"></script>
 		<script>
 			// setup the scene
-      			var scene = new THREE.Scene();
-      			var camera = new THREE.PerspectiveCamera(75, 
-				window.innerWidth/window.innerHeight, 0.1, 1000);
-      			var renderer = new THREE.WebGLRenderer();
-      			renderer.setSize(window.innerWidth, window.innerHeight);
-      			document.body.appendChild(renderer.domElement);
+			var scene = new THREE.Scene();
+			var camera = new THREE.PerspectiveCamera(75, 
+			window.innerWidth/window.innerHeight, 0.1, 1000);
+			var renderer = new THREE.WebGLRenderer();
+			renderer.setSize(window.innerWidth, window.innerHeight);
+			document.body.appendChild(renderer.domElement);
 			camera.position.z = 5;
 			THREE.Cache.enabled = true;
 			var count = 0;
@@ -37,7 +37,9 @@
 				},
 			// onError callback
 				function (err) {console.error('An error happened');});
-				loader.load('shaders/fragmentShader.frag',
+
+			//load fshader
+			loader.load('shaders/fragmentShader.frag',
 			// onLoad callback
 				function (data) {
 						console.log(data); // output the text to the console
@@ -62,7 +64,8 @@
 			var cube2 = new THREE.Mesh( geometry2, material2 );
 			scene.add(cube2);
 			geometry2.translate(-2, -2, 0);
-			var geometry1, material1, mesh1;
+			var geometry1, material1, mesh;
+			var geometry3, material3;
 
 			//function to add cool cube
 			function addCoolCube() {
@@ -73,9 +76,14 @@
 						};
 				geometry1 = new THREE.BoxGeometry(1, 1, 1);
 				material1 =  new THREE.ShaderMaterial({uniforms: uniforms, fragmentShader: fshader,vertexShader: vshader,precision: "mediump"});
-				mesh1 = new THREE.Mesh(geometry1, material1);
-				mesh1.position.x = 2;
-				scene.add(mesh1);
+				mesh = new THREE.Mesh(geometry1, material1);
+				mesh.position.x = 2;
+				scene.add(mesh);
+				geometry3 = new THREE.BoxGeometry(1, 1, 1);
+				material3 =  new THREE.ShaderMaterial({uniforms: uniforms, fragmentShader: "uniform float time;uniform vec2 resolution;void main()	{float x = mod(time + gl_FragCoord.x, 20.) < 10. ? 1. : 0.;float y = mod(time + gl_FragCoord.y, 20.) < 10. ? 1. : 0.; gl_FragColor = vec4(vec3(min(x, y)), 1.);}",vertexShader: vshader,precision: "mediump"});
+				mesh = new THREE.Mesh(geometry3, material3);
+				mesh.position.x = 5;
+				scene.add(mesh);
 				}	
 			}
 
@@ -93,6 +101,10 @@
 				if(geometry1) {
 				geometry1.rotateX(0.01);
 				geometry1.rotateY(0.01);
+				}
+				if(geometry3) {
+				geometry3.rotateX(0.01);
+				geometry3.rotateY(0.01);
 				}
 				renderer.render(scene, camera);
 			}
