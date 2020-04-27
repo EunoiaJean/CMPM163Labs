@@ -22,7 +22,7 @@ A) Multiple the U value by 8 to get the x coordinate.
 B) Multiply the V value by 8 to get the y coordinate.
 C) Grey.
 
-For the last cube I multiplied the vUv by 2. I then researched online to find this line of code.
+For the last cube I multiplied the vUv by 2. I then researched online to find this line of code:
 
 material3.uniforms.texture1.value.wrapS = material3.uniforms.texture1.value.wrapT = THREE.RepeatWrapping;
 
