@@ -16,8 +16,7 @@ The 4th cube I found a tutorial for different fragment shaders and this one chan
 
 Video: https://drive.google.com/file/d/1t--Xtk-EqmgcH20O5XX17pN2L-ga5RS9/view?usp=sharing
 
-## **lab 3**
-
+## **lab 4*
 A) Multiple the U value by 8 to get the x coordinate.
 
 B) Multiply the V value by 8 to get the y coordinate.
