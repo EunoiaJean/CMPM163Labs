@@ -15,3 +15,18 @@ The 3rd cube I used the shader material to interpolate between blue and pink.
 The 4th cube I found a tutorial for different fragment shaders and this one changes the color based on the positions multiplied by geometric functions.
 
 Video: https://drive.google.com/file/d/1t--Xtk-EqmgcH20O5XX17pN2L-ga5RS9/view?usp=sharing
+
+## **lab 3**
+
+A) Multiple the U value by 8 to get the x coordinate.
+B) Multiply the V value by 8 to get the y coordinate.
+C) Grey.
+
+For the last cube I multiplied the vUv by 2. I then researched online to find this line of code.
+
+material3.uniforms.texture1.value.wrapS = material3.uniforms.texture1.value.wrapT = THREE.RepeatWrapping;
+
+This finished the repeating shader texture for me.
+
+Video: https://drive.google.com/file/d/1py-bAaMdq-0dl7O50Pixv0bwlyrGiuzS/view?usp=sharing
+
