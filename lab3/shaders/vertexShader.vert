@@ -1,8 +1,8 @@
-varying vec3 vUv;
+varying vec2 vUv;
+
+uniform sampler2D texture;
 
 void main() {
-  vUv = position;
-
-  vec4 modelViewPosition = modelViewMatrix * vec4(position, 1.0);
-  gl_Position = projectionMatrix * modelViewPosition;
+    // add origianl texture
+    gl_FragColor = texture2D(texture, vUv);
 }
