@@ -33,3 +33,13 @@ This finished the repeating shader texture for me.
 
 Video: https://drive.google.com/file/d/1py-bAaMdq-0dl7O50Pixv0bwlyrGiuzS/view?usp=sharing
 
+## **Lab 5**
+
+I modified the skybox using a free asset.
+I added particles to the tires.
+I changed the model of the player in the gocart to Unity-chan. 
+I also added a hat and changed the materials of a lot of the game's assets. 
+I then added more background models from free asset downloads.
+
+Video: https://drive.google.com/file/d/1tjE4cRrQqzuk4E6THdbVTCsMit5nBluY/view?usp=sharing
+
