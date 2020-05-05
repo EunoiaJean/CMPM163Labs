@@ -45,6 +45,8 @@ I also added a hat and changed the materials of a lot of the game's assets.
 
 I then added more background models from free asset downloads.
 
+The directional lighting was changed too.
+
 
 Video: https://drive.google.com/file/d/1tjE4cRrQqzuk4E6THdbVTCsMit5nBluY/view?usp=sharing
 
