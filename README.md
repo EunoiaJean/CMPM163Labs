@@ -50,7 +50,7 @@ The directional lighting was changed too.
 
 Video: https://drive.google.com/file/d/1tjE4cRrQqzuk4E6THdbVTCsMit5nBluY/view?usp=sharing
 
-## **Lab 5**
+## **Lab 7**
 I made a mountain range by usign the Shader graph and inputting the position as input for the noise generator which then changed the vertex poisitions.
 
 The water was made by doing the same thing but making the noise of the vertex position change through time instead of world position.
