@@ -50,3 +50,13 @@ The directional lighting was changed too.
 
 Video: https://drive.google.com/file/d/1tjE4cRrQqzuk4E6THdbVTCsMit5nBluY/view?usp=sharing
 
+## **Lab 5**
+I made a mountain range by usign the Shader graph and inputting the position as input for the noise generator which then changed the vertex poisitions.
+
+The water was made by doing the same thing but making the noise of the vertex position change through time instead of world position.
+The ripples were made through distorting color with noise generators and increasing the power of the ripples. This was overlayed on top of the vertex position changes.
+I added some lighting changes and other assets afetr changing the color through the shader graph to give a better desert mountain look.
+
+
+Video: https://drive.google.com/file/d/1Zw8XaG8Kz7149iP9BDLp0YkrIVAaY18n/view?usp=sharing
+
