@@ -60,3 +60,12 @@ I added some lighting changes and other assets afetr changing the color through 
 
 Video: https://drive.google.com/file/d/1Zw8XaG8Kz7149iP9BDLp0YkrIVAaY18n/view?usp=sharing
 
+## **Lab 7**
+
+Central Park inspired me with the center area being filled with nature.![](https://i.imgur.com/kn4sNId.png)
+
+Screenshot of the tutorial city: ![](https://i.imgur.com/53YvGqr.png)
+
+Screenshot of my city: ![](https://i.imgur.com/UGB8deZ.png)
+
+I tried to make a central woodlands area to mirror what Central Park looks like.
