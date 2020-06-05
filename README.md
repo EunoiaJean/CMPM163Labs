@@ -69,3 +69,12 @@ Screenshot of the tutorial city: ![](https://i.imgur.com/53YvGqr.png)
 Screenshot of my city: ![](https://i.imgur.com/UGB8deZ.png)
 
 I tried to make a central woodlands area to mirror what Central Park looks like.
+
+## **Lab 9**
+
+Tutorial L system: ![](https://i.imgur.com/mJVFxOq.png)
+
+My L system: ![](https://i.imgur.com/2oBqIuk.png)
+
+I made a L system that looks like cloud outlines. I did this by increasing both the angles and by heavily weighing the rule to be right sided.
+
